@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+button.primary{
+    background-color:#d6e0f0;
+    padding: 15px 10px;
+    border:none;
+    border-radius: 10px;
+    color: #43658b;
+    cursor: pointer;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

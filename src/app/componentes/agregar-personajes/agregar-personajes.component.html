@@ -1,0 +1,11 @@
+<div class="contenedor">
+
+    <input type="text" 
+           [(ngModel)]="nombre" 
+           placeholder="Escribi el nombre de un campeon"
+           (keyup)="onKey($event)"
+           >
+
+    <button (click)="agregarPersonaje()" class="primary submit">agregar personaje</button>
+
+</div>

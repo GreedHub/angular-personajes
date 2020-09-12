@@ -1,0 +1,5 @@
+<span *ngIf="personaje.nombre != 'teemo'">{{personaje.nombre}}</span> 
+<img src="https://i.pinimg.com/originals/44/77/6f/44776f63e9c3935f496b3f426b0e7cd3.png" alt="" *ngIf="personaje.nombre == 'teemo'">
+&nbsp;&nbsp;
+<span class="material-icons eliminar" (click)="editarPersonaje()">edit</span>
+<span class="material-icons eliminar" (click)="borrarPersonaje()">delete</span>
