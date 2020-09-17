@@ -1,12 +1,24 @@
+@import '../../../assets/css/globals.scss';
 .contenedor{
 
     display: flex;
     flex-direction: column ;
-    background-color: #f9f9f9 ;
-    margin: 20px;
+    background-color: color("gris-claro") ;
+
     padding: 20px; 
     min-height: 200px ;
     justify-content: space-evenly;
     border-radius: 5px;
+    
+}
 
+button.primary{
+    padding: 20px;
+    
+}
+
+input.nombre{
+    padding: 10px;
+    border: solid 0.5px color("gris-medio");
+    outline-color: color("primario-claro");
 }

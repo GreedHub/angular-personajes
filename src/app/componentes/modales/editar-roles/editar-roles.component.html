@@ -1,13 +1,20 @@
-<p>Editar roles ()</p>
 
 
-<!-- 
-
-    crear un array de roles
-    crear metodo "toggleRol" que revise en un array si existe un string y lo saque, sino lo agregue
-    
-    Importar servicio de personajes
-    crear metodo "actualizarRoles" que envíe los roles al servicio
+    <h2 mat-dialog-title class="title">Editar Roles ({{personaje.nombre}})</h2>
 
 
- -->
+
+    <div class="roles" mat-dialog-content>
+        <button *ngFor="let rol of ROLES" (click)="toggleRol(rol)" [ngClass]="{activo:tieneRol(rol)}">
+            <img [src]="'../../../../assets/img/'+rol+'.png'" alt="">
+            {{rol}}
+        </button>
+    </div>
+
+
+    <div mat-dialog-actions>
+        <button (click)="actualizarRoles()" class="guardarCambios primary">Guardar Cambios</button>
+    </div>
+
+
+    <!--  -->

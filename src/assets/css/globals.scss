@@ -1,0 +1,13 @@
+$colores:(
+    secundario:#F23160,
+    primario:#d6e0f0,
+    primario-oscuro: #43658b,
+    primario-medio: #c6d0e0,
+    gris-claro:#f9f9f9,
+    gris-medio: #bebebe,
+
+);
+
+@function color($nombre_de_color){
+    @return map-get($colores,$nombre_de_color)
+}

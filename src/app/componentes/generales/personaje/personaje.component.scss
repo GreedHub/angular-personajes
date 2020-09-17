@@ -1,3 +1,10 @@
-.eliminar{
+@import '../../../../assets/css/globals.scss';
+
+.buttons span{
+    margin: 0px 5px;
     cursor: pointer;
+}
+
+.eliminar{
+    color: color("secundario");
 }

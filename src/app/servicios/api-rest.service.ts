@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Personaje } from '../modelos/Personaje';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class ApiRestService {
   constructor(private http:HttpClient) { }
 
   configuracionServicio={
-    urlBase: "http://localhost:5001",
+    urlBase: "http://localhost:5003",
   }
 
 
@@ -38,8 +39,6 @@ export class ApiRestService {
 
   borrarPersonaje(nombre:string):Observable<any>{
     
-    console.log(nombre)
-
     let url = `${this.configuracionServicio.urlBase}/borrarPersonaje`;
 
     const params = {
@@ -48,5 +47,18 @@ export class ApiRestService {
 
     return this.http.delete<any>(url,{params});
   
+  }
+
+  actualizarRoles(nombre:string,roles:string[]):Observable<any>{
+
+    let url = `${this.configuracionServicio.urlBase}/actualizarRoles`;
+
+    const params = {
+      nombre,
+      roles,
+    }
+
+    return this.http.put<any>(url,params);
+
   }
 }

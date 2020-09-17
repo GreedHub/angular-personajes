@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  CHAT_SECRET:  "oauth:twitchkey",
+  TWITCH_LOGIN_URL : "https://id.twitch.tv",
+  TWITCH_API_URL : "https://api.twitch.tv",
+  TWITCH_WSS_URL : "wss://irc-ws.chat.twitch.tv:443",
+
 };
 
 /*

@@ -1,10 +1,12 @@
+@import './assets/css/globals.scss';
+
 /* You can add global styles to this file, and also import other style files */
 button.primary{
-    background-color:#d6e0f0;
+    background-color:color("primario");
     padding: 15px 10px;
     border:none;
     border-radius: 10px;
-    color: #43658b;
+    color: color("primario-oscuro");
     cursor: pointer;
     outline: none;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(255,255,255,1);
@@ -13,3 +15,26 @@ button.primary{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+app-root{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 8fr;
+    grid-template-areas: "agregar"
+                         "lista";
+}
+
+app-agregar-personajes{
+    grid-area: agregar;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+app-lista-personajes{
+    grid-area: lista;
+    padding: 20px;
+    box-sizing: border-box;
+}

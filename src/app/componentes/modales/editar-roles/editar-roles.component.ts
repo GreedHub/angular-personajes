@@ -12,7 +12,7 @@ export class EditarRolesComponent implements OnInit {
 
   personaje:Personaje; 
   rolesActuales:string[];
-  ROLES:string[] = [ "adc", "mid","support", "jungla", "top" ];
+  ROLES:string[] = [ "adc", "mid","support", "jungla", "top" , "teemo"];
 
   
  
@@ -43,13 +43,13 @@ export class EditarRolesComponent implements OnInit {
   } 
 
 // crear metodo "actualizarRoles" que envíe los roles al servicio
-  actualizarRoles(){
+  actualizarRoles(){   
+    this.personajeService.actualizarRoles(this.personaje.nombre,this.rolesActuales); 
+    this.dialogRef.close();
+  }
 
-    //array1.filter(value => array2.includes(value))
-   
-    this.personajeService.actualizarRoles(???);
-
-
+  tieneRol(rol:string){
+    return this.rolesActuales.includes(rol);
   }
 
 }

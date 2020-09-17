@@ -1,0 +1,55 @@
+@import '../../../../assets/css/globals.scss';
+
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.roles{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 300px;
+    align-items: center;
+
+ 
+    
+}
+.roles button{
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:none;
+    background-color: transparent;
+    outline: none;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.activo{
+    img{
+        color:color("primario");
+    }
+   -webkit-box-shadow: 10px 10px 5px 0px color("primario");
+   -moz-box-shadow: 10px 10px 5px 0px color("primario");
+   box-shadow: 10px 10px 5px 0px color("primario");
+}
+
+.roles img{
+    width: 100px;
+    height: 100px;
+    color:("primario");
+
+}
+
+.guardarCambios{
+    width: 100%;
+}
+
+.contenedor{
+    display: flex;
+}
