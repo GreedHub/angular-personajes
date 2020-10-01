@@ -38,17 +38,10 @@ export class AgregarPersonajesComponent implements OnInit {
 
      this._socket.addEventListener('message',(e)=>{
        let data = e.data;
-      switch(data){
 
-        case 'PING :tmi.twitch.tv':
-            this._socket.send('PONG :tmi.twitch.tv')
-            break;
-
-        default:
-        
-            break;
-
-    }
+      if(data.includes('PING :tmi.twitch.tv')){
+        this._socket.send('PONG :tmi.twitch.tv')
+      }
 
     let command = data.split(" :!")[1];
 
@@ -62,6 +55,15 @@ export class AgregarPersonajesComponent implements OnInit {
     switch(command.type){
         case "personaje":
           this.personajeService.agregarPersonaje(command.value,[]);
+            break;
+
+        case "roles":
+
+          let personaje = command.value.split(' ')[0];
+
+          let roles = command.value.substr(command.value.indexOf(' ')+1).split(" ");
+          console.log({personaje,roles})
+          this.personajeService.actualizarRoles(personaje,roles);
             break;
     }
       
@@ -93,7 +95,7 @@ export class AgregarPersonajesComponent implements OnInit {
   agregarPersonaje(){
 
     if(this.nombre == "") return;
-    this._socket.send(`PRIVMSG #gravityl :${this.nombre}`)
+    /* this._socket.send(`PRIVMSG #gravityl :${this.nombre}`) */
     this.personajeService.agregarPersonaje(this.nombre,[]);
 
     this.nombre = "";

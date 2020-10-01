@@ -22,7 +22,7 @@ export class PersonajeComponent implements OnInit {
   }
 
   borrarPersonaje(){
-    this.personajeService.borrarPersonaje(this.personaje.nombre);
+    this.personajeService.borrarPersonaje(this.personaje.id);
   } 
 
   editarPersonaje(){

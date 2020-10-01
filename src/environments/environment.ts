@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  CHAT_SECRET:  "oauth:twitchkey",
+  CHAT_SECRET:  "oauth:swgyfzqin7dza6rpgg9ygow4un9vis",
   TWITCH_LOGIN_URL : "https://id.twitch.tv",
   TWITCH_API_URL : "https://api.twitch.tv",
   TWITCH_WSS_URL : "wss://irc-ws.chat.twitch.tv:443",

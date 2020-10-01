@@ -12,13 +12,13 @@ export class ApiRestService {
   constructor(private http:HttpClient) { }
 
   configuracionServicio={
-    urlBase: "http://localhost:5003",
+    urlBase: "http://localhost:5000",
   }
 
 
   obtenerPersonajes():Observable<Personaje[]>{
     
-    let url = `${this.configuracionServicio.urlBase}/obtenerPersonajes`;
+    let url = `${this.configuracionServicio.urlBase}/personajes`;
 
     return this.http.get<Personaje[]>(url);
   
@@ -26,7 +26,7 @@ export class ApiRestService {
 
   agregarPersonaje(nombre:string,roles:string[]):Observable<any>{
     
-    let url = `${this.configuracionServicio.urlBase}/agregarPersonaje`;
+    let url = `${this.configuracionServicio.urlBase}/personajes`;
 
     const params = {
       nombre,
@@ -37,24 +37,32 @@ export class ApiRestService {
   
   }
 
-  borrarPersonaje(nombre:string):Observable<any>{
+  borrarPersonaje(id:Number):Observable<any>{
     
-    let url = `${this.configuracionServicio.urlBase}/borrarPersonaje`;
+    let url = `${this.configuracionServicio.urlBase}/personajes`;
 
     const params = {
-      nombre,
+      id:id.toString(),
     }
 
     return this.http.delete<any>(url,{params});
   
   }
 
-  actualizarRoles(nombre:string,roles:string[]):Observable<any>{
+  obtenerRoles():Observable<Personaje[]>{
+    
+    let url = `${this.configuracionServicio.urlBase}/roles`;
 
-    let url = `${this.configuracionServicio.urlBase}/actualizarRoles`;
+    return this.http.get<Personaje[]>(url);
+  
+  }
+
+  actualizarRoles(idPersonaje:Number,roles:any[]):Observable<any>{
+
+    let url = `${this.configuracionServicio.urlBase}/roles`;
 
     const params = {
-      nombre,
+      idPersonaje,
       roles,
     }
 

@@ -6,8 +6,8 @@
 
     <div class="roles" mat-dialog-content>
         <button *ngFor="let rol of ROLES" (click)="toggleRol(rol)" [ngClass]="{activo:tieneRol(rol)}">
-            <img [src]="'../../../../assets/img/'+rol+'.png'" alt="">
-            {{rol}}
+            <img [src]="'../../../../assets/img/'+rol.rol+'.png'" alt="">
+            {{rol.rol}}
         </button>
     </div>
 

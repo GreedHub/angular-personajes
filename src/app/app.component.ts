@@ -17,6 +17,7 @@ export class AppComponent {
   ngOnInit(): void {
 
     this.personajeService.cargarPersonajesApi();
+    this.personajeService.cargarRolesApi();
 
   }
 

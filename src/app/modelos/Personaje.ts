@@ -1,8 +1,11 @@
+import { Rol } from './Rol';
+
 export class Personaje{
 
    nombre:  string;
    winrate: Number;
-   roles:   string[]; 
+   roles:   Rol[]; 
+   id:      Number;
 
     constructor(nombre){
         this.nombre = nombre;

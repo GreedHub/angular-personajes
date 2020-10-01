@@ -11,8 +11,10 @@ import { ApiRestService } from './api-rest.service';
 export class PersonajesService {
 
   listaPersonajes:Personaje[]= [];
+  appInfo:any = {};
 
   @Output() ListaPersonajes: ReplaySubject<Personaje[]> = new ReplaySubject<Personaje[]>(1);
+  @Output() AppInfo: ReplaySubject<any> = new ReplaySubject<any>(1);
 
   constructor(private apiRestService:ApiRestService) { }
   
@@ -29,14 +31,21 @@ export class PersonajesService {
     });
   }
 
-  borrarPersonaje(nombre:string){
-    this.apiRestService.borrarPersonaje(nombre).subscribe(response=>{
+  cargarRolesApi(){
+    this.apiRestService.obtenerRoles().subscribe(response=> {
+      this.appInfo.roles = response;
+      this.AppInfo.next(this.appInfo);
+    });
+  }
+
+  borrarPersonaje(id:Number){
+    this.apiRestService.borrarPersonaje(id).subscribe(response=>{
       this.cargarPersonajesApi();
     });    
   }
 
-  actualizarRoles(nombre:string,roles:string[]){
-    this.apiRestService.actualizarRoles(nombre,roles).subscribe(response=>{
+  actualizarRoles(idPersonaje:Number,roles:any[]){
+    this.apiRestService.actualizarRoles(idPersonaje,roles).subscribe(response=>{
       this.cargarPersonajesApi();
     });    
   }
