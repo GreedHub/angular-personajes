@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 environments
+api/node_modules

@@ -1,0 +1,49 @@
+### Obtener Personajes
+GET http://localhost:5000/personajes
+
+### Obtener Roles
+GET http://localhost:5000/roles
+
+### Obtener Personajes
+GET http://localhost:5000/obtenerPersonajes?personaje=teemo
+
+### Crear Personaje
+POST http://localhost:5000/personajes
+Content-Type: application/json
+
+{
+    "nombre": "ahri",
+    "roles": ["mid"]
+}
+
+
+### Crear Personaje
+POST http://localhost:5000/crearPersonaje
+Content-Type: application/json
+
+{
+    "nombre": "teemo",
+    "roles": ["mid","top","support","jungla","adc","dios"]
+}
+
+
+### Eliminar Personaje
+DELETE http://localhost:5000/personajes?id=5
+
+### Agregar Rol
+PUT http://localhost:5000/agregarRol
+Content-Type: application/json
+
+{
+    "nombre": "ahri",
+    "rol": "adc"
+}
+
+### Actualizar Roles
+PUT http://localhost:5001/actualizarRoles
+Content-Type: application/json
+
+{
+    "nombre": "ahri",
+    "roles": ["adc","jungla"]
+}
