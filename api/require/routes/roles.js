@@ -42,7 +42,7 @@ router
                 })
 
 
-        roles = roles.filter( rol => { 
+        let rolesAgregar = roles.filter( rol => { 
 
             let encontrado = rolesDb.find(_rol => _rol == rol.id  );
 
@@ -50,12 +50,29 @@ router
 
         });
 
+        let rolesQuitar = rolesDb.filter( rol => { 
+
+            let encontrado = roles.find(_rol => _rol.id == rol  );
+
+            return !encontrado ? true : false;
+
+        });
 
         //agregar un nuevo rol
-        roles.forEach( async rol=>{
+        rolesAgregar.forEach( async rol=>{
+            
             if(!rol.id) return;
 
             await personajesController.agregarRol(idPersonaje,rol.id)
+                .catch(err=>{
+                    console.log(err)
+                });
+
+        })
+
+        rolesQuitar.forEach( async rol=>{
+
+            await personajesController.borrarRolPersonaje(idPersonaje,rol)
                 .catch(err=>{
                     console.log(err)
                 });

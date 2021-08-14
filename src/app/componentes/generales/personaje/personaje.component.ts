@@ -18,7 +18,7 @@ export class PersonajeComponent implements OnInit {
   @Input() personaje:Personaje;
 
   ngOnInit(): void {
-    
+    this.personaje.nombre = this.personaje.nombre.toLowerCase();
   }
 
   borrarPersonaje(){

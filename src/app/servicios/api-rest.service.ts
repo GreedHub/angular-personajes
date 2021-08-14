@@ -65,8 +65,9 @@ export class ApiRestService {
       idPersonaje,
       roles,
     }
-
+       
     return this.http.put<any>(url,params);
 
   }
+  
 }

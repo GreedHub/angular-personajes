@@ -111,6 +111,25 @@ class PersonajesController{
 
     } 
 
+    async borrarRolPersonaje(idPersonaje,idRol){
+
+        return new Promise(async(resolve,reject)=>{
+
+            await sql.executeProcedure("borrarRolPersonaje",[new SqlParameter("idPersonaje",idPersonaje),new SqlParameter("idRol",idRol)])
+            .then(async (response)=>{ 
+
+                resolve(response);
+
+               })
+            .catch((err)=>{
+                console.log(err);
+                reject(err);
+             })
+             
+        });
+
+    } 
+
     async obtenerRoles(){
 
         return new Promise(async(resolve,reject)=>{

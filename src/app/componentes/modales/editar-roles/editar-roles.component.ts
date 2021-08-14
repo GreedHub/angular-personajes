@@ -35,11 +35,8 @@ export class EditarRolesComponent implements OnInit {
   //crear metodo "toggleRol" que revise en un array si existe un string y lo saque, sino lo agregue
   toggleRol(rolSeleccionado:Rol): void {
 
-    console.log(this.rolesActuales,rolSeleccionado)
-
     let rolEncontrado = this.rolesActuales.find(rol => rol.id === rolSeleccionado.id);
 
-    console.log({rolSeleccionado,rolEncontrado,roles:this.rolesActuales})
     if(!rolEncontrado){
       this.rolesActuales.push(rolSeleccionado);
       return;
@@ -57,7 +54,6 @@ export class EditarRolesComponent implements OnInit {
 
   tieneRol(rol:Rol){
     let rolEncontrado = this.rolesActuales.find(_rol=> rol.id === _rol.id);
-    console.log(rolEncontrado)
     return rolEncontrado != undefined;
   }
 
